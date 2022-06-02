@@ -30,7 +30,7 @@ const Home = () => {
             </Typography>
             <Typography variant="body2" color="text.secondary">
               This puppy is cute. Kawaii dog. <br />
-              Tea cup puppyyyyy !
+              Tea cup puppyyyyy !!
             </Typography>
           </CardContent>
           <CardActions>
