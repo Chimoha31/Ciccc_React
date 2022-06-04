@@ -61,13 +61,49 @@ let CICCC: College = {
   ceo: "Johnny",
 }
 console.log(CICCC);
+//--------------------------------------------
+// type assertion
+let id: any = 123;
+
+// let numberID = <number>id;
+let numberID = id as number;
+console.log(numberID);
+
+//------------------------------------------
+// interface
+interface Animal {
+  name: String,
+  taleNumber: number
+}
+
+let ani: Animal = {
+  name: "Dog",
+  taleNumber: 1
+}
+console.log(ani)
+//----------------------------------------
+// functions
+function sum(num1: number, num2: number) {
+  return num1 + num2;
+}
+console.log(sum(2, 3));
+
+//----------------------------------------
+// Generic
+function printArray<T>(array: T):T {
+  return array;
+}
+// let numberArr = <number[]>printArray([1,2,3]);
+// let stringArr = <string[]>printArray(["1", "2"]);
+// console.log(numberArr);
+// console.log(stringArr);
 
 
 
 
-
-
-  return <div className="App">App</div>;
+  return(
+  <div className="App">App</div>
+  ) 
 }
 
 export default App;
