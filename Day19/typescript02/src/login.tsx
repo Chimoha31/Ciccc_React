@@ -1,23 +1,32 @@
 import { FC } from "react";
 
+type LoginModel = {
+  email: string;
+  password: string;
+};
 
-type LoginModel= {
-    email: string,
-    password: string
-}
-
-const Login:FC<LoginModel> = (props) => {
-    return (
-        <div>
-            <form>
-                <label htmlFor="email" />
-                <input type="email" placeholder="Enter Email" />
-                <label htmlFor="email" />
-                <input type="password" placeholder="Enter Password" />
-                <button>Submit</button>
-            </form>
-        </div>
-    )
-}
+const Login: FC<LoginModel> = ({ email, password }) => {
+  return (
+    <div>
+      <form>
+        <label htmlFor="email" />
+        <input
+          type="email"
+          autoComplete="on"
+          placeholder="Enter Email"
+        //   value={email}
+        />
+        <label htmlFor="email" />
+        <input
+          type="password"
+          autoComplete="current-password"
+          placeholder="Enter Password"
+          //   value={password}
+        />
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+};
 
 export default Login;
