@@ -12,16 +12,16 @@ const TodoList = () => {
 
   console.log({ todos });
   return (
-    <>
+    <div style={{marginTop: "10px"}}>
       {todos.map((data) => (
-        <div key={data.id}>
+        <div key={data.id} style={{border: "1px solid #ccc", borderRadius: "10px", padding: "0px 10px", marginTop: "5px", width: "350px"}}>
           <p>
             Task: {data.message}
-            <button onClick={() => handleDeleteTodo(data.id)}>Delete</button>
+            <button onClick={() => handleDeleteTodo(data.id)} style={{marginLeft: "5px"}}>Delete</button>
           </p>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
