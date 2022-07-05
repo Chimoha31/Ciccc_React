@@ -1,12 +1,14 @@
-
+import React from 'react';
+import TodoInput from './components/TodoInput';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-    
+      <TodoInput />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
