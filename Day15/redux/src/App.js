@@ -1,18 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
-import { decrementNumber, incrementNumber } from "./actions/actions";
 import "./App.css";
+import {increment, decrement} from './reducer/counterSlice';
 
 function App() {
   // useSelector() -- Excessing the global state, similar to useContext
   // useDispatch()
 
   const dispatch = useDispatch();
-  const state = useSelector((value) => value.changeNumber);
+  const count = useSelector((state) => state.counter.value);
+
   return (
     <div className="App">
-      <button onClick={() => dispatch(incrementNumber())}>+</button>
-      <span>{state}</span>
-      <button onClick={() => dispatch(decrementNumber())}>-</button>
+      <button onClick={() => dispatch(increment())}>+</button>
+      <span>{count}</span>
+      <button onClick={() => dispatch(decrement())}>-</button>
     </div>
   );
 }
