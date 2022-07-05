@@ -1,10 +1,10 @@
 // import {legacy_createStore as createStore} from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
-import {counterSlice} from '../reducer/counterSlice';
+import counterReducer from '../reducer/counterSlice';
 
 const store = configureStore({
   reducer: {
-    counterSlice
+    counter: counterReducer
   }
 });
 
