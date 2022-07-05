@@ -1,27 +1,27 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { deleteTodo } from "../slices/todoSlice";
 
 const TodoList = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const { todos } = useSelector((data) => data.todos);
 
+  const handleDeleteTodo = (id) => {
+    dispatch(deleteTodo(id));
+  };
+
   console.log({ todos });
-
-  const handleDeleteTodo = () => {
-    
-  }
-
   return (
-    <div>
-      {todos.map((todo) => (
-        <div key={todo.id}>
+    <>
+      {todos.map((data) => (
+        <div key={data.id}>
           <p>
-            Task: {todo.message} 
-            <button onClick={handleDeleteTodo}>Delete</button>
+            Task: {data.message}
+            <button onClick={() => handleDeleteTodo(data.id)}>Delete</button>
           </p>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

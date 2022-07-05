@@ -16,7 +16,10 @@ export const todoSlice = createSlice({
     },
     deleteTodo: (state, action) => {
       const filterTodos = state.todos.filter((todo) => todo.id !== action.payload)
-      return filterTodos
+      return {
+        ...state,
+        todos: filterTodos
+      }
     }
   }
 });
